@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <!-- <button class="search-icon" onclick="search()">Search</button> -->
+            <button class="delete-selected" onclick="deleteSelected()">Delete Selected</button>
+
+        </div>
+
+        <!-- Table -->
+        <table id="userTable">
+            <!-- Table Headings -->
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAll" onclick="selectAll()"></th>
+                    <th>Name</th>
+                    <!-- Add other properties as needed -->
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <!-- Table Body -->
+            <tbody>
+                <!-- User rows will be inserted here dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Pagination Buttons -->
+        <div class="pagination">
+            <button class="first-page" onclick="gotoPage(1)">First</button>
+            <button class="previous-page" onclick="prevPage()">Previous</button>
+            <span id="currentPage">Page 1</span>
+            <button class="next-page" onclick="nextPage()">Next</button>
+            <button class="last-page" onclick="gotoPage(1)">Last</button>
+        </div>
+
+        <!-- Bulk Delete Button -->
+        <div class="bulk-delete">
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

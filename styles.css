@@ -1,0 +1,109 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Highlight selected rows */
+tr.selected {
+    background-color: #e0e0e0;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#searchInput {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin-right: 10px; /* Adjust the spacing as needed */
+    flex: 1; /* To make the input take up remaining space in the flex container */
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Highlight selected rows */
+tr.selected {
+    background-color: grey;
+}
+
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+}
+
+button:hover {
+    background-color:skyblue;
+}
+
+.delete-selected{
+    padding: 10px;
+    cursor: pointer;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+}
+.pagination {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination button {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #005F7F;
+}
+
+.bulk-delete {
+    margin-top: 20px;
+}
