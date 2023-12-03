@@ -51,7 +51,6 @@ function buildTable(data) {
 
 
 function search() {
-    // Get the search input value
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
 
     // Filter the userData array based on the search input
@@ -127,7 +126,6 @@ function saveEdit(button) {
 function deleteRow(button) {
     const row = button.closest('tr');
     const userId = row.querySelector('td:nth-child(2)').innerText; // Assuming the ID is in the second column
-    // Implement your delete logic using the userId
 
     const userIndex = userData.findIndex(user => user.name === userId);
 
@@ -178,10 +176,33 @@ function updatePagination() {
 function deleteSelected() {
     // Implement delete selected functionality
     const checkboxes = document.querySelectorAll('.select-checkbox:checked');
+    var selectedRows = document.querySelectorAll('.selected');
     checkboxes.forEach(checkbox => {
         const row = checkbox.closest('tr');
         const userId = row.querySelector('td:nth-child(2)').innerText; // Assuming the ID is in the second column
-        // Implement your delete logic using the userId
+        const userIndex = userData.findIndex(user => user.name === userId);
+
+    if (userIndex !== -1) {
+        // Remove the user from the userData array
+        userData.splice(userIndex, 1);
+
+        // Rebuild the table with the updated data
+        buildTable(userData);
+    }
         row.remove(); // Remove the row from the table
+    });
+
+    selectedRows.forEach(function (row) {
+        const userId = row.querySelector('td:nth-child(2)').innerText; // Assuming the ID is in the second column
+        const userIndex = userData.findIndex(user => user.name === userId);
+
+    if (userIndex !== -1) {
+        // Remove the user from the userData array
+        userData.splice(userIndex, 1);
+
+        // Rebuild the table with the updated data
+        buildTable(userData);
+    }
+        row.remove();
     });
 }
